@@ -45,17 +45,17 @@ You can also build against one of the ARMv8 builds of the Kortex API with Conan 
 
 - Artik 710: 
 
-        catkin_make --cmake-args -DCONAN_TARGET_PLATFORM=artik710
+        catkin_make --cmake-args -D CONAN_TARGET_PLATFORM=artik710
         source devel/setup.bash
 
 - IMX6:
 
-        catkin_make --cmake-args -DCONAN_TARGET_PLATFORM=imx6
+        catkin_make --cmake-args -D CONAN_TARGET_PLATFORM=imx6
         source devel/setup.bash
 
 - NVidia Jetson: 
 
-        catkin_make --cmake-args -DCONAN_TARGET_PLATFORM=jetson
+        catkin_make --cmake-args -D CONAN_TARGET_PLATFORM=jetson
         source devel/setup.bash
 
 As you see, there are instructions to install the Conan package manager. You can learn more about why we use Conan or how to simply download the API and link against it [in this specific section of the kortex_driver readme](kortex_driver/readme.md#conan). You can also decide 
