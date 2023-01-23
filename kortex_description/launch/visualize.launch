@@ -7,17 +7,17 @@
     <arg name="vision" default="true"/> <!-- True if the arm has a Vision module -->
 
     <!-- Gripper configuration -->
-    <arg name="gripper" default=""/>
+    <arg name="gripper" default="robotiq_2f_85"/>
 
     <!-- Start Rviz -->
-    <arg name="start_rviz" default="true"/>
+    <arg name="start_rviz" default="false"/>
 
     <!-- Load the description for the robot -->
     <!-- Without gripper -->
-    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find kortex_description)/robots/$(arg arm).xacro dof:=$(arg dof) vision:=$(arg vision) sim:=true"
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find kortex_description)/robots/$(arg arm).xacro dof:=$(arg dof) vision:=$(arg vision) sim:=false"
         if="$(eval not arg('gripper'))"/>
     <!-- With gripper -->
-    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find kortex_description)/robots/$(arg arm)_$(arg gripper).xacro dof:=$(arg dof) vision:=$(arg vision) sim:=true"
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find kortex_description)/robots/$(arg arm)_$(arg gripper).xacro dof:=$(arg dof) vision:=$(arg vision) sim:=false"
         unless="$(eval not arg('gripper'))"/>
 
     <!-- Joint state publisher and robot state publisher -->
